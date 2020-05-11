@@ -3,7 +3,7 @@
 
 ```yaml
 module "codepipeline" {
-  source   = ""
+  source   = "DTherHtun/codepipeline/aws"
   name     = "iac"
   vcs_repo = var.vcs_repo
   environment = {
