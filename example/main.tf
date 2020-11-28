@@ -13,7 +13,7 @@ provider "aws" {
 }
 
 module "s3backend" {
-  source = "DTherHtun/s3backend/aws"
+  source        = "DTherHtun/s3backend/aws"
   namespace     = "k8smm"
   principal_arn = "arn:aws:iam::344475516279:user/detherhtun"
 }
@@ -25,7 +25,7 @@ module "codepipeline" {
   environment = {
     AWS_ACCESS_KEY_ID     = var.aws.access_key
     AWS_SECRET_ACCESS_KEY = var.aws.secret_key
-    CONFIRM_DESTROY = 1
+    CONFIRM_DESTROY       = 1
   }
   s3_backend_config = module.s3backend.config
 }
